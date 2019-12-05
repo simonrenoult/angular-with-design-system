@@ -24,6 +24,12 @@
       ],
       "http-client/*": [
         "dist/http-client/*"
+      ],
+      "design-system": [
+        "dist/design-system"
+      ],
+      "design-system/*": [
+        "dist/design-system/*"
       ]
     }
   },
