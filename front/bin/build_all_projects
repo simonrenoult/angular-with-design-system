@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+const Path = require("path");
+const Fs = require("fs");
+const ChildProcess = require("child_process");
+
+listProjects().forEach(buildProject);
+
+function listProjects() {
+  const projectsDirectory = Path.resolve(__dirname, "..", "projects");
+  return Fs.readdirSync(projectsDirectory);
+}
+
+function buildProject(projectName) {
+  console.log(`[${projectName}] build :: started`);
+  ChildProcess.execSync(`npm run build ${projectName}`);
+  console.log(`[${projectName}] build :: done`);
+}
