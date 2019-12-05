@@ -82,6 +82,86 @@
           }
         }
       }
+    },
+    "sgo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/sgo",
+      "sourceRoot": "projects/sgo/src",
+      "prefix": "sgo",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/sgo",
+            "index": "projects/sgo/src/index.html",
+            "main": "projects/sgo/src/main.ts",
+            "polyfills": "projects/sgo/src/polyfills.ts",
+            "tsConfig": "projects/sgo/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/sgo/src/favicon.ico",
+              "projects/sgo/src/assets"
+            ],
+            "styles": [
+              "projects/sgo/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/sgo/src/environments/environment.ts",
+                  "with": "projects/sgo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "sgo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "sgo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "sgo:build"
+          }
+        }
+      }
     }},
   "defaultProject": "sga"
 }
