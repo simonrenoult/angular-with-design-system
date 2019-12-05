@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
+import { PrimaryButtonComponent } from './primary-button/primary-button.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [PrimaryButtonComponent],
   imports: [],
-  exports: []
+  exports: [
+    PrimaryButtonComponent
+  ]
 })
 export class DesignSystemModule { }

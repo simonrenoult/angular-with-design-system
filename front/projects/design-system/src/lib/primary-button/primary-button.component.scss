@@ -1,0 +1,9 @@
+.btn {
+
+  color: gray;
+
+  &.primary-btn {
+    color: green;
+    text-transform: uppercase;
+  }
+}
