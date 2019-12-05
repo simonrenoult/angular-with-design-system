@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from 'http-client';
+import { DesignSystemModule } from 'design-system';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { HttpClientModule } from 'http-client';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    DesignSystemModule
   ],
   providers: [],
   bootstrap: [AppComponent]
