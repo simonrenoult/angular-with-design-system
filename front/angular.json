@@ -162,6 +162,41 @@
           }
         }
       }
+    },
+    "http-client": {
+      "projectType": "library",
+      "root": "projects/http-client",
+      "sourceRoot": "projects/http-client/src",
+      "prefix": "nexsis",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/http-client/tsconfig.lib.json",
+            "project": "projects/http-client/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/http-client/src/test.ts",
+            "tsConfig": "projects/http-client/tsconfig.spec.json",
+            "karmaConfig": "projects/http-client/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/http-client/tsconfig.lib.json",
+              "projects/http-client/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "sga"
 }
