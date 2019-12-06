@@ -23,7 +23,7 @@ Based on Angular workspaces using applications and libraries.
 │   ├── sga
 │   └── sgo
 ├── bin
-│   └── build_all_projects
+│   └── build
 ├── package.json
 └── projects
     ├── design-system

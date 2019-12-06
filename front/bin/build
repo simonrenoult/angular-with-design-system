@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+const Path = require("path");
+const Fs = require("fs");
+const ChildProcess = require("child_process");
+
+const args = process.argv.slice(2) || [];
+const projectType = args[0] || "library";
+
+listProjectsNameWithType(projectType).forEach(build);
+
+function listProjectsNameWithType(projectType) {
+  const angularConfigurationPath = Path.resolve(__dirname, "..", "angular.json");
+  const rawAngularConfiguration = Fs.readFileSync(angularConfigurationPath, 'utf8');
+  const angularConfiguration = JSON.parse(rawAngularConfiguration);
+  return Object.values(angularConfiguration.projects)
+    .filter(project => project.projectType === projectType)
+    .map(project => project.root.split('/').pop());
+}
+
+function build(projectName) {
+  console.log(`[${projectName}] build :: started`);
+  ChildProcess.execSync(`npx ng build ${projectName}`);
+  console.log(`[${projectName}] build :: done`);
+}
