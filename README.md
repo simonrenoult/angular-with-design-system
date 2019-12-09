@@ -45,7 +45,7 @@ Based on Angular workspaces using applications, libraries and [Storybook](1).
         └── src/...
 ```
 
-## Steps
+## Steps
 
 See [HISTORY.md](https://github.com/simonrenoult/angular-with-design-system/blob/master/HISTORY.md)
 
