@@ -10,7 +10,7 @@ export class PrimaryButtonComponent {
   @Input() text = 'Valider';
   @Output() clicked: EventEmitter<void> = new EventEmitter();
 
-  onClick() {
+  btnClicked() {
     this.clicked.emit();
   }
 }
