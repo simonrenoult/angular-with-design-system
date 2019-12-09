@@ -2,16 +2,15 @@
 
 Modular Angular application including a design-system.
 
-Based on Angular workspaces using applications and libraries.
+Based on Angular workspaces using applications, libraries and [Storybook](1).
 
 ## Start
 
-    npm start sgo -- --port=1337 # http-client and design-system must have been built first
-    npm start sga -- --port=1338 # http-client and design-system must have been built first
+    npm start # starts sgo on port 1337, sga on port 1338, storybook on port 1339  
 
 ## Build
 
-    npm run build:all
+    npm run build
 
 ## Tree
 
@@ -35,6 +34,7 @@ Based on Angular workspaces using applications and libraries.
     │               ├── primary-button.component.html
     │               ├── primary-button.component.scss
     │               ├── primary-button.component.spec.ts
+    │               ├── primary-button.component.stories.ts
     │               └── primary-button.component.ts
     ├── http-client
     │   ├── package.json
@@ -48,3 +48,6 @@ Based on Angular workspaces using applications and libraries.
 ## Steps
 
 See [HISTORY.md](https://github.com/simonrenoult/angular-with-design-system/blob/master/HISTORY.md)
+
+
+[1]: https://storybook.js.org/
